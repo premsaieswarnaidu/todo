@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+<div class="box" id="heading">
+    <h1>
+      Work List
+    </h1>
+  </div>
+
+  <body>
+    <div class="box">
+
+        <%  if(locals.workList){ %>
+            <% for(let i=0;i<workList.length;i++){ %>
+              <div class="item">
+                  <input type="checkbox">
+                  <p><%= workList[i] %></p>
+              </div>
+            <% } %>
+        <%  } else{ %>
+            <p></p>
+        <%  } %>
+
+
+      <form class="item" action="/work" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" fdprocessedid="9li5l">
+          <button type="submit" name="list" value="Saturday," july="" 22="" fdprocessedid="7g0o5">+</button>
+      </form>
+    </div>
+
+
+  </body>
+<%- include("partials/footer.ejs") %>
